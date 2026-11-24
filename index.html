@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chris Bert Basalo — WordPress &amp; Shopify Developer</title>
+<meta name="description" content="Senior WordPress, WooCommerce and Shopify developer with 13+ years building, optimizing and maintaining client websites. 30 live client sites across WordPress and Shopify.">
+<meta name="author" content="Chris Bert Basalo">
+<link rel="canonical" href="https://chrisbertbasalo.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chris Bert Basalo — WordPress &amp; Shopify Developer">
+<meta property="og:description" content="Senior WordPress, WooCommerce and Shopify developer. 30 live client sites across the US, Australia and Europe.">
+<meta property="og:image" content="assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0b'/><text x='50' y='68' font-size='52' font-family='monospace' font-weight='bold' fill='%234ade80' text-anchor='middle'>cb</text></svg>">
+
+<style>
+:root{
+  --bg:#0a0a0b;
+  --bg-2:#101012;
+  --card:#141417;
+  --card-hover:#1a1a1f;
+  --line:#26262c;
+  --text:#ededf0;
+  --muted:#8b8b96;
+  --dim:#5f5f6b;
+  --accent:#4ade80;
+  --accent-dim:#22c55e;
+  --radius:14px;
+  --max:1120px;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--sans);font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#04140a}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.section{padding:96px 0;border-top:1px solid var(--line)}
+.eyebrow{
+  font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 14px;
+}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0}
+h2{font-size:clamp(28px,4vw,40px);font-weight:650;margin-bottom:16px}
+h3{font-size:19px;font-weight:600}
+.lede{color:var(--muted);font-size:17px;max-width:62ch;margin:0}
+
+/* ---------- nav ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,10,11,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:-.01em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:14px;color:var(--muted);transition:color .18s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  border:1px solid var(--accent);color:var(--accent)!important;
+  padding:7px 15px;border-radius:8px;font-weight:550;transition:all .18s;
+}
+.nav-cta:hover{background:var(--accent);color:#04140a!important}
+.burger{display:none;background:none;border:0;color:var(--text);font-size:22px;cursor:pointer;padding:4px 8px}
+
+/* ---------- hero ---------- */
+.hero{padding:104px 0 88px;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(680px 340px at 12% -8%,rgba(74,222,128,.10),transparent 70%);
+}
+.hero-inner{position:relative;max-width:840px}
+.status{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--mono);font-size:12.5px;color:var(--muted);
+  border:1px solid var(--line);background:var(--bg-2);
+  padding:6px 13px;border-radius:99px;margin-bottom:26px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(74,222,128,.18)}
+h1{font-size:clamp(38px,6.2vw,68px);font-weight:680;margin-bottom:22px}
+h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--muted);font-size:18px;max-width:60ch;margin:0 0 34px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 22px;border-radius:10px;font-size:15px;font-weight:560;
+  border:1px solid transparent;cursor:pointer;transition:all .18s;
+}
+.btn-primary{background:var(--accent);color:#04140a}
+.btn-primary:hover{background:#6ee79b;transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line);color:var(--text);background:var(--bg-2)}
+.btn-ghost:hover{border-color:var(--dim);background:var(--card-hover)}
+
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;margin-top:64px;
+}
+.stat{background:var(--bg-2);padding:24px 22px}
+.stat b{display:block;font-size:30px;font-weight:680;letter-spacing:-.03em;color:var(--text)}
+.stat small{font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)}
+
+/* ---------- grids ---------- */
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:26px;transition:all .2s;
+}
+.card:hover{background:var(--card-hover);border-color:#32323a}
+.card .num{font-family:var(--mono);font-size:12px;color:var(--accent);display:block;margin-bottom:14px}
+.card h3{margin-bottom:9px}
+.card p{color:var(--muted);font-size:14.5px;margin:0}
+
+/* ---------- work ---------- */
+.work-head{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;margin-bottom:34px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filter{
+  font-family:var(--mono);font-size:12px;letter-spacing:.03em;
+  background:var(--bg-2);border:1px solid var(--line);color:var(--muted);
+  padding:7px 13px;border-radius:99px;cursor:pointer;transition:all .18s;
+}
+.filter:hover{color:var(--text);border-color:var(--dim)}
+.filter[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#04140a;font-weight:600}
+.filter .fc{opacity:.55;font-size:11px;margin-left:2px}
+.filter[disabled]{opacity:.32;cursor:not-allowed}
+.filter[disabled]:hover{color:var(--muted);border-color:var(--line)}
+
+.filter-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:12px}
+.filter-label{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);min-width:66px;
+}
+.result-line{
+  font-family:var(--mono);font-size:12px;color:var(--dim);
+  margin:22px 0 14px;
+}
+.empty{
+  grid-column:1/-1;text-align:center;padding:54px 20px;color:var(--muted);
+  border:1px dashed var(--line);border-radius:var(--radius);
+}
+
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.site{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:all .2s;
+}
+.site:hover{border-color:var(--accent);transform:translateY(-3px)}
+.thumb{
+  position:relative;aspect-ratio:16/10;background:var(--bg-2);
+  border-bottom:1px solid var(--line);overflow:hidden;
+}
+.thumb img{
+  position:relative;z-index:1;
+  width:100%;height:100%;object-fit:cover;object-position:top center;
+  opacity:0;transition:opacity .35s ease,transform .5s ease;
+}
+.thumb img.loaded{opacity:1}
+.site:hover .thumb img{transform:scale(1.02)}
+
+/* fallback tile: shown underneath while loading, and permanently if every
+   screenshot source fails. No gradient — flat tile with the site initials. */
+.ph{position:absolute;inset:0;display:grid;place-items:center;background:#15151a}
+.ph span{
+  font-family:var(--mono);font-size:32px;font-weight:700;
+  color:#3a3a44;letter-spacing:-.02em;text-transform:lowercase;
+}
+.ph::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.035),transparent);
+  transform:translateX(-100%);animation:shimmer 1.6s infinite;
+}
+.ph.done::after{display:none}
+@keyframes shimmer{100%{transform:translateX(100%)}}
+
+.site-body{padding:18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.site-body h3{font-size:16px}
+.site-desc{color:var(--muted);font-size:13.5px;line-height:1.55;margin:0}
+.site-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:4px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+
+/* platform badge, top-left of the thumbnail */
+.cms{
+  position:absolute;top:10px;left:10px;z-index:2;
+  font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;padding:4px 8px;border-radius:6px;
+  backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);
+}
+.cms.wordpress{background:rgba(33,117,155,.86);color:#eaf6fb}
+.cms.shopify{background:rgba(85,145,50,.86);color:#f0f8ea}
+.tag{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--line);padding:3px 9px;border-radius:99px;
+}
+.visit{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.site-url{font-family:var(--mono);font-size:12.5px;color:var(--dim);word-break:break-all;margin:0}
+
+/* ---------- skills ---------- */
+.skill-block{border-top:1px solid var(--line);padding:22px 0;display:grid;grid-template-columns:220px 1fr;gap:28px}
+.skill-block:first-of-type{border-top:0}
+.skill-block h3{font-size:15px;font-family:var(--mono);font-weight:600;letter-spacing:.02em;color:var(--accent);padding-top:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  font-size:13.5px;background:var(--bg-2);border:1px solid var(--line);
+  padding:6px 12px;border-radius:8px;color:var(--muted);
+}
+
+/* ---------- timeline ---------- */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:4px;top:8px;bottom:8px;width:1px;background:var(--line)}
+.job{position:relative;padding-bottom:30px}
+.job:last-child{padding-bottom:0}
+.job::before{
+  content:"";position:absolute;left:-26px;top:8px;width:9px;height:9px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--dim);
+}
+.job:first-child::before{border-color:var(--accent);background:var(--accent)}
+.job .when{font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.04em}
+.job h3{font-size:17px;margin:4px 0 2px}
+.job .role{color:var(--accent);font-size:14px;margin:0 0 6px}
+.job p.desc{color:var(--muted);font-size:14.5px;margin:0}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.detail{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.detail:last-child{border-bottom:0}
+.detail .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);min-width:78px;padding-top:4px}
+.detail .v{font-size:15px;word-break:break-word}
+.detail .v a:hover{color:var(--accent)}
+form{display:flex;flex-direction:column;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+label{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:7px}
+input,textarea{
+  width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);
+  border-radius:9px;padding:12px 14px;font:inherit;font-size:15px;transition:border-color .18s;
+}
+input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+textarea{resize:vertical;min-height:120px}
+.form-note{font-size:12.5px;color:var(--dim);margin:0}
+
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--dim);font-size:13.5px}
+.foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+.foot a:hover{color:var(--accent)}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .g3,.work-grid{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .contact-grid,.g2{grid-template-columns:1fr;gap:32px}
+  .skill-block{grid-template-columns:1fr;gap:12px}
+}
+@media (max-width:640px){
+  .section{padding:64px 0}
+  .hero{padding:64px 0 56px}
+  .nav-links{
+    display:none;position:absolute;top:64px;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--bg-2);border-bottom:1px solid var(--line);padding:8px 24px 18px;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:11px 0;font-size:15px}
+  .nav-cta{text-align:center;margin-top:8px}
+  .burger{display:block}
+  .g3,.work-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">chris<span>.</span>basalo</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav-links" id="menu">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact" class="nav-cta">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="status"><span class="dot"></span> Available for freelance projects</div>
+      <h1>WordPress &amp; Shopify developer who ships <em>fast, stable sites</em>.</h1>
+      <p>I'm Chris — a senior WordPress, WooCommerce and Shopify developer with 13+ years of experience. I build custom themes, fix broken sites, speed up slow ones, and keep the whole stack running: hosting, DNS, CDN, database and SEO.</p>
+      <div class="btns">
+        <a href="#contact" class="btn btn-primary">Start a project &rarr;</a>
+        <a href="#work" class="btn btn-ghost">See my live work</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>30</b><small>Live client sites</small></div>
+        <div class="stat"><b>13+</b><small>Years experience</small></div>
+        <div class="stat"><b>26<span style="color:var(--dim)">/</span>4</b><small>WordPress / Shopify</small></div>
+        <div class="stat"><b>100%</b><small>Remote &amp; async</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <p class="eyebrow">Services</p>
+      <h2>What I can take off your plate</h2>
+      <p class="lede">Whether you need a site built from scratch, an existing one rescued, or an ongoing developer on call — these are the jobs I do every week.</p>
+
+      <div class="grid g3" style="margin-top:38px">
+        <div class="card">
+          <span class="num">01</span>
+          <h3>Custom WordPress development</h3>
+          <p>Custom themes and child themes, ACF-driven page builders, plugin configuration and custom functionality built to your exact spec — not a bloated template.</p>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3>WooCommerce &amp; Shopify stores</h3>
+          <p>Store setup, theme customization with Liquid, checkout and product page tweaks, payment and shipping configuration, and third-party app integration.</p>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3>Speed &amp; Core Web Vitals</h3>
+          <p>Pagespeed audits and fixes for desktop and mobile: asset optimization, caching, CDN setup, database cleanup and query tuning for real-world load times.</p>
+        </div>
+        <div class="card">
+          <span class="num">04</span>
+          <h3>Hosting &amp; server management</h3>
+          <p>Migrations, WHM/cPanel administration, DNS and CDN configuration, SSL, staging environments and MySQL optimization across Kinsta, SiteGround, GoDaddy and more.</p>
+        </div>
+        <div class="card">
+          <span class="num">05</span>
+          <h3>Landing pages &amp; CRM</h3>
+          <p>High-converting landing pages in HubSpot (HubL), ClickFunnels, LeadPages and OptimizePress — wired into Mailchimp, Infusionsoft, AWeber or GetResponse.</p>
+        </div>
+        <div class="card">
+          <span class="num">06</span>
+          <h3>Technical SEO</h3>
+          <p>Site audits, on-page and technical optimization, schema, Google Analytics and Tag Manager setup, Search Console diagnostics and indexation fixes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="work-head">
+        <div>
+          <p class="eyebrow">Selected work</p>
+          <h2>30 sites, live right now</h2>
+          <p class="lede">Every site below is one I built, customized or maintain. Filter by platform or industry — they're all live in production.</p>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <span class="filter-label">Platform</span>
+        <div class="filters" data-group="cms" role="group" aria-label="Filter projects by platform">
+          <button class="filter" data-v="all" aria-pressed="true">All <span class="fc"></span></button>
+          <button class="filter" data-v="wordpress" aria-pressed="false">WordPress <span class="fc"></span></button>
+          <button class="filter" data-v="shopify" aria-pressed="false">Shopify <span class="fc"></span></button>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <span class="filter-label">Industry</span>
+        <div class="filters" data-group="cat" role="group" aria-label="Filter projects by industry">
+          <button class="filter" data-v="all" aria-pressed="true">All <span class="fc"></span></button>
+          <button class="filter" data-v="home" aria-pressed="false">Home &amp; Property <span class="fc"></span></button>
+          <button class="filter" data-v="health" aria-pressed="false">Health &amp; Wellness <span class="fc"></span></button>
+          <button class="filter" data-v="business" aria-pressed="false">Business &amp; Finance <span class="fc"></span></button>
+          <button class="filter" data-v="ecommerce" aria-pressed="false">eCommerce <span class="fc"></span></button>
+          <button class="filter" data-v="industrial" aria-pressed="false">Industrial &amp; Auto <span class="fc"></span></button>
+          <button class="filter" data-v="events" aria-pressed="false">Events <span class="fc"></span></button>
+        </div>
+      </div>
+
+      <p class="result-line" id="resultLine" aria-live="polite"></p>
+      <div class="work-grid" id="workGrid"></div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="section" id="stack">
+    <div class="wrap">
+      <p class="eyebrow">Stack</p>
+      <h2>Tools I work in daily</h2>
+
+      <div style="margin-top:34px">
+        <div class="skill-block">
+          <h3>Platforms</h3>
+          <div class="chips">
+            <span class="chip">WordPress</span><span class="chip">WooCommerce</span><span class="chip">Shopify</span>
+            <span class="chip">HubSpot CMS</span><span class="chip">Neto</span><span class="chip">DIVI / Elegant Themes</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h3>Languages</h3>
+          <div class="chips">
+            <span class="chip">PHP</span><span class="chip">JavaScript</span><span class="chip">jQuery</span>
+            <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">MySQL</span>
+            <span class="chip">Liquid</span><span class="chip">HubL</span><span class="chip">Bootstrap</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h3>Hosting &amp; infra</h3>
+          <div class="chips">
+            <span class="chip">Kinsta</span><span class="chip">SiteGround</span><span class="chip">GoDaddy</span>
+            <span class="chip">Bluehost</span><span class="chip">HostGator</span><span class="chip">IONOS</span>
+            <span class="chip">DigitalOcean</span><span class="chip">WHM / cPanel</span><span class="chip">DNS &amp; CDN</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h3>SEO &amp; analytics</h3>
+          <div class="chips">
+            <span class="chip">Google Analytics</span><span class="chip">Tag Manager</span><span class="chip">Search Console</span>
+            <span class="chip">Bing Webmaster</span><span class="chip">Keyword research</span><span class="chip">On/off-page SEO</span>
+            <span class="chip">Link building</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h3>CRM &amp; funnels</h3>
+          <div class="chips">
+            <span class="chip">HubSpot</span><span class="chip">Mailchimp</span><span class="chip">Infusionsoft</span>
+            <span class="chip">AWeber</span><span class="chip">iContact</span><span class="chip">GetResponse</span>
+            <span class="chip">ClickFunnels</span><span class="chip">LeadPages</span><span class="chip">OptimizePress</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h3>Design &amp; CRO</h3>
+          <div class="chips">
+            <span class="chip">Figma</span><span class="chip">Photoshop</span><span class="chip">Canva</span>
+            <span class="chip">AB Tasty</span><span class="chip">Convert</span><span class="chip">Bitbucket</span>
+            <span class="chip">Trello</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <p class="eyebrow">Experience</p>
+      <h2>Where I've done the work</h2>
+
+      <div class="grid g2" style="margin-top:38px">
+        <div class="tl">
+          <div class="job">
+            <span class="when">Jan 2022 — Present</span>
+            <h3>Freelance</h3>
+            <p class="role">WordPress, Shopify &amp; HubSpot Developer</p>
+            <p class="desc">Custom themes and plugins, front-end builds, hosting and MySQL optimization, API integrations, HubSpot landing pages and CRM workflows for clients across the US and Australia.</p>
+          </div>
+          <div class="job">
+            <span class="when">Oct 2024 — Dec 2024</span>
+            <h3>Conversionry</h3>
+            <p class="role">WordPress, Shopify &amp; Neto CRO Developer</p>
+            <p class="desc">Built and shipped A/B test variants on Shopify and Neto storefronts using Convert and AB Tasty.</p>
+          </div>
+          <div class="job">
+            <span class="when">Aug 2021 — Dec 2021</span>
+            <h3>PetCo Direct</h3>
+            <p class="role">WordPress Developer</p>
+            <p class="desc">Theme and plugin customization, GoDaddy server management, Mailchimp CRM and API integration, pagespeed and backend optimization.</p>
+          </div>
+          <div class="job">
+            <span class="when">Nov 2020 — Aug 2021</span>
+            <h3>My Virtual Mate</h3>
+            <p class="role">WordPress / HubSpot Developer</p>
+            <p class="desc">HubSpot landing pages and quote templates integrated with WordPress; DigitalOcean hosting operations and SEO-focused content management.</p>
+          </div>
+          <div class="job">
+            <span class="when">Jan 2020 — Oct 2020</span>
+            <h3>The Digital Navigator</h3>
+            <p class="role">WordPress Developer</p>
+            <p class="desc">Responsive site builds on Kinsta with DNS, CDN and MySQL configuration, plus Google Cloud Storage and Search Console setup.</p>
+          </div>
+        </div>
+
+        <div class="tl">
+          <div class="job">
+            <span class="when">Sep 2018 — Jan 2020</span>
+            <h3>REV365 Digital Marketing</h3>
+            <p class="role">Shopify Front-End Developer</p>
+            <p class="desc">Converted InVision designs into Shopify pages; built pop-ups, lazy loading and dropdown navigation. Version control via Bitbucket.</p>
+          </div>
+          <div class="job">
+            <span class="when">Jul 2017 — Aug 2018</span>
+            <h3>WPTangerine</h3>
+            <p class="role">Web Developer / SEO</p>
+            <p class="desc">WordPress and eCommerce builds, DNS-to-host integration, MySQL management, troubleshooting and on-page SEO for a client portfolio.</p>
+          </div>
+          <div class="job">
+            <span class="when">Earlier</span>
+            <h3>Steve Shelton Ph.D.</h3>
+            <p class="role">Web Developer / SEO / Social Media</p>
+            <p class="desc">DIVI-based WordPress builds, cPanel database management, AWeber CRM, ClickFunnels landing pages and link-building campaigns.</p>
+          </div>
+          <div class="job">
+            <span class="when">Mar 2014 — May 2016</span>
+            <h3>Just Simply Outsourcing Worldwide</h3>
+            <p class="role">Technical Service / SEO</p>
+            <p class="desc">Client technical support, content updates, performance optimization and link building.</p>
+          </div>
+          <div class="job">
+            <span class="when">Feb 2013 — Mar 2014</span>
+            <h3>Six Eleven Global Teleservices</h3>
+            <p class="role">Web Developer / SEO</p>
+            <p class="desc">Client WordPress builds with a focus on customization, load speed and content management.</p>
+          </div>
+          <div class="job">
+            <span class="when">2007 — 2011</span>
+            <h3>University of Southeastern Philippines</h3>
+            <p class="role">BS Information Technology</p>
+            <p class="desc">Davao City, Philippines.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's talk about your site</h2>
+      <p class="lede">Tell me what you're building or what's broken. I reply within one business day.</p>
+
+      <div class="contact-grid" style="margin-top:40px">
+        <div>
+          <div class="detail">
+            <span class="k">Email</span>
+            <span class="v"><a href="mailto:chrisbasalo08@gmail.com">chrisbasalo08@gmail.com</a></span>
+          </div>
+          <div class="detail">
+            <span class="k">Phone</span>
+            <span class="v"><a href="tel:+639959667077">+63 995 966 7077</a></span>
+          </div>
+          <div class="detail">
+            <span class="k">Based in</span>
+            <span class="v">Bislig City, Surigao del Sur, Philippines &middot; working remote worldwide</span>
+          </div>
+          <div class="detail">
+            <span class="k">WordPress</span>
+            <span class="v"><a href="https://tinyurl.com/chris-bert-basalo-portfolio" target="_blank" rel="noopener">Full WordPress portfolio &nearr;</a></span>
+          </div>
+          <div class="detail">
+            <span class="k">Shopify</span>
+            <span class="v"><a href="https://tinyurl.com/shopify-port" target="_blank" rel="noopener">Full Shopify portfolio &nearr;</a></span>
+          </div>
+          <div class="detail">
+            <span class="k">Resume</span>
+            <span class="v"><a href="assets/chris-bert-basalo-resume.pdf" target="_blank" rel="noopener">Download PDF &darr;</a></span>
+          </div>
+        </div>
+
+        <form action="https://formsubmit.co/chrisbasalo08@gmail.com" method="POST" id="contactForm">
+          <input type="hidden" name="_subject" value="New portfolio inquiry">
+          <input type="hidden" name="_template" value="table">
+          <div>
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email">
+          </div>
+          <div>
+            <label for="website">Website (optional)</label>
+            <input id="website" name="website" type="text" placeholder="example.com">
+          </div>
+          <div>
+            <label for="message">What do you need?</label>
+            <textarea id="message" name="message" required placeholder="New build, redesign, speed fix, migration, ongoing maintenance..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="justify-content:center">Send message</button>
+          <p class="form-note">Your message will be sent using FormSubmit. First-time setup requires confirming the activation email.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>&copy; <span id="year">2026</span> Chris Bert Basalo. Built by hand — no page builder.</span>
+    <span><a href="mailto:chrisbasalo08@gmail.com">chrisbasalo08@gmail.com</a></span>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   PROJECTS
+   Thumbnails resolve in this order, automatically:
+     1. assets/screenshots/<img>   — your own capture (best quality)
+     2. WordPress mShots           — free live screenshot service
+     3. thum.io                    — second free service
+     4. flat tile with site initials
+   So you can replace the auto-screenshots with your own, a few at a
+   time, just by adding files to assets/screenshots/.
+
+   Categories: ecommerce | health | home | business | events | industrial | tech
+   Descriptions were written from each live site's own content.
+   ============================================================ */
+const PROJECTS = [
+  { name:"Aroma Journey",             url:"https://aromajourney.com",                    cms:"wordpress",  cat:"events",      tag:"Events",        img:"aromajourney.jpg",
+    desc:"Luxury mobile fragrance bar and commercial scenting studio for Austin events and brands." },
+  { name:"Bird Rock Wealth",          url:"https://birdrockwealth.com",                  cms:"wordpress",  cat:"business",    tag:"Finance",       img:"birdrockwealth.jpg",
+    desc:"Independent fee-only Austin financial advisory firm specializing in major life transitions." },
+  { name:"Global Sand Tray",          url:"http://globalsandtray.com",                   cms:"wordpress",  cat:"health",      tag:"Certification", img:"globalsandtray.jpg",
+    desc:"Professional body offering membership and clinical certification for sandtray therapists." },
+  { name:"Robin Hood A/C",            url:"https://robinhoodac.com",                     cms:"wordpress",  cat:"home",        tag:"HVAC",          img:"robinhoodac.jpg",
+    desc:"HVAC repair, installation and air quality service across Austin, Kyle and Buda." },
+  { name:"Longevity Insiders Group",  url:"https://longevityinsidersgroup.com",          cms:"wordpress",  cat:"health",      tag:"Community",     img:"longevityinsidersgroup.jpg",
+    desc:"Membership community publishing healthspan content and hosting curated longevity events." },
+  { name:"Alo Creek",                 url:"https://alocreek.com",                        cms:"wordpress",  cat:"home",        tag:"Real Estate",   img:"alocreek.jpg",
+    desc:"Pre-launch site for a twelve-home custom residential development." },
+  { name:"Serene Flooring",           url:"https://sereneflooring.com",                  cms:"wordpress",  cat:"home",        tag:"Flooring",      img:"sereneflooring.jpg",
+    desc:"Wholesale flooring supplier and installation contractor serving Kyle and South Austin." },
+  { name:"Backed by Women",           url:"https://backedbywomen.com",                   cms:"wordpress",  cat:"business",    tag:"Marketing",     img:"backedbywomen.jpg",
+    desc:"Organic social media management, branding and training studio for small brands." },
+  { name:"Nest Egg Retirement",       url:"https://nesteggretirementsolutions.com",      cms:"wordpress",  cat:"business",    tag:"Insurance",     img:"nesteggretirementsolutions.jpg",
+    desc:"Texas Medicare, insurance and retirement planning consultancy with a partner referral network." },
+  { name:"Unitech AZ",                url:"https://unitechaz.com",                       cms:"wordpress",  cat:"home",        tag:"Pest Control",  img:"unitechaz.jpg",
+    desc:"Family-owned Phoenix pest control company treating scorpions, termites, rodents and insects." },
+  { name:"Shop Jack &amp; Jill",      url:"https://shopjackandjill.com",                 cms:"wordpress",  cat:"ecommerce",   tag:"WooCommerce",   img:"shopjackandjill.jpg",
+    desc:"Children's clothing and accessories boutique in Winnie, Texas, with a full online store." },
+  { name:"The Fitness School",        url:"https://thefitnessschool.org",                cms:"wordpress",  cat:"health",      tag:"Fitness",       img:"thefitnessschool.jpg",
+    desc:"North Austin youth and family gym running camps, after-school programs and memberships." },
+  { name:"Austin Scavenger Hunt",     url:"https://austinscavengerhunt.com",             cms:"wordpress",  cat:"events",      tag:"Events",        img:"austinscavengerhunt.jpg",
+    desc:"Corporate team-building company running custom scavenger hunts in downtown Austin." },
+  { name:"Rhone ATX",                 url:"https://rhoneatx.com",                        cms:"wordpress",  cat:"home",        tag:"Real Estate",   img:"rhoneatx.jpg",
+    desc:"Gated luxury condominium development selling one- and two-bedroom residences in East Austin." },
+  { name:"Bare Refrigeration ATX",    url:"https://barefrigerationatx.com",              cms:"wordpress",  cat:"industrial",  tag:"HVAC/R",        img:"barefrigerationatx.jpg",
+    desc:"Central Texas commercial refrigeration, HVAC and ice machine repair contractor." },
+  { name:"Miller Operations",         url:"https://milleroperations.com",                cms:"wordpress",  cat:"business",    tag:"Marketing",     img:"milleroperations.jpg",
+    desc:"Small-business marketing agency offering SEO, AI search visibility, paid ads and websites." },
+  { name:"Pacer ID",                  url:"https://pacerid.com",                         cms:"wordpress",  cat:"health",      tag:"MedTech",       img:"pacerid.jpg",
+    desc:"Medical device startup building a handheld tool that instantly identifies implanted cardiac devices." },
+  { name:"Wheel Doctor AU",           url:"https://wheeldoctor.com.au",                  cms:"wordpress",  cat:"industrial",  tag:"Automotive",    img:"wheeldoctor.jpg",
+    desc:"Perth mobile alloy wheel, bumper scuff and headlight repair service." },
+  { name:"Makle CS",                  url:"https://maklecs.com",                         cms:"wordpress",  cat:"industrial",  tag:"Automotive",    img:"maklecs.jpg",
+    desc:"Auto electrical workshop in Butler, Perth, handling diagnostics, repairs and accessory installs." },
+  { name:"New Day Septic",            url:"https://newdayseptic.com",                    cms:"wordpress",  cat:"home",        tag:"Home Serv.",    img:"newdayseptic.jpg",
+    desc:"Septic tank pumping, repair and installation company serving the Raleigh, NC area." },
+  { name:"Revelation Machinery",      url:"https://revelationmachinery.com",             cms:"wordpress",  cat:"industrial",  tag:"Industrial",    img:"revelationmachinery.jpg",
+    desc:"Nationwide dealer and auctioneer of used industrial, CNC and fabrication machinery." },
+  { name:"Live Well Physio",          url:"https://letslivewell.com.au",                 cms:"wordpress",  cat:"health",      tag:"Physio",        img:"letslivewell.jpg",
+    desc:"Perth physiotherapy group with clinics in Hillarys, Mullaloo and Currambine." },
+  { name:"Watertime Outfitters",      url:"https://watertimeoutfitters.com",             cms:"wordpress",  cat:"business",    tag:"Outdoors",      img:"watertimeoutfitters.jpg",
+    desc:"Oregon guided fly fishing trips and classes, plus a small angler apparel shop." },
+  { name:"Soul Success Unleashed",    url:"https://soulsuccessunleashed.com",            cms:"wordpress",  cat:"business",    tag:"Coaching",      img:"soulsuccessunleashed.jpg",
+    desc:"Online mentoring and course platform helping empaths and intuitives develop their gifts." },
+  { name:"Maggy Maid",                url:"https://maggymaid.com",                       cms:"wordpress",  cat:"home",        tag:"Home Serv.",    img:"maggymaid.jpg",
+    desc:"Domestic referral agency matching vetted house cleaners across six US cities." },
+  { name:"Ecology Skincare",          url:"https://ecologyskincare.com",                 cms:"wordpress",  cat:"ecommerce",   tag:"Beauty",        img:"ecologyskincare.jpg",
+    desc:"Australian small-batch tallow-based skincare, made on Victoria's Mornington Peninsula." },
+  { name:"R2'ficial &amp; Co",        url:"https://r2ficial.com.au",                     cms:"shopify",    cat:"home",        tag:"Landscaping",   img:"r2ficial.jpg",
+    desc:"Perth supplier and installer of artificial grass, turf accessories and DIY tool hire." },
+  { name:"Natasha Moor Cosmetics",    url:"https://natashamoor.com",                     cms:"shopify",    cat:"ecommerce",   tag:"Beauty",        img:"natashamoor.jpg",
+    desc:"Vegan, paraben-free cosmetics brand selling lipsticks, mascara, concealers and beauty tools." },
+  { name:"Barton Springs Mill",       url:"https://bartonspringsmill.com",               cms:"shopify",    cat:"ecommerce",   tag:"Food",          img:"bartonspringsmill.jpg",
+    desc:"Texas mill selling organic stone-milled heirloom flours and grains, plus baking classes." },
+  { name:"Ask Debbie About Hair",     url:"https://askdebbieabouthair.com",               cms:"shopify",    cat:"health",      tag:"Wellness",      img:"hairandscalpmeds.jpg",
+    desc:"Hair, scalp and skincare essentials with guided detox and wellness programs." }
+];
+
+const grid = document.getElementById('workGrid');
+
+/* Screenshot dimensions requested from the services */
+const SHOT_W = 1200, SHOT_H = 750;
+
+function domainOf(url){ return url.replace(/^https?:\/\//,'').replace(/\/$/,''); }
+function initials(name){
+  const words = name.replace(/&amp;/g,'').trim().split(/\s+/).filter(Boolean);
+  return (words[0][0] + (words[1] ? words[1][0] : '')).toLowerCase();
+}
+
+/* Ordered list of thumbnail sources for a project. */
+function sources(p){
+  return [
+    'assets/screenshots/' + p.img,
+    'https://s.wordpress.com/mshots/v1/' + encodeURIComponent(p.url) + '?w=' + SHOT_W + '&h=' + SHOT_H,
+    'https://image.thum.io/get/width/' + SHOT_W + '/crop/' + SHOT_H + '/noanimate/' + p.url
+  ];
+}
+
+/* Walk the source list on each failure; give up to the fallback tile at the end. */
+function nextSource(img){
+  const list = JSON.parse(img.dataset.src);
+  const i = Number(img.dataset.i) + 1;
+  if(i >= list.length){
+    img.remove();
+    const ph = img.closest('.thumb').querySelector('.ph');
+    if(ph) ph.classList.add('done');
+    return;
+  }
+  img.dataset.i = i;
+  img.src = list[i];
+}
+
+function shotLoaded(img){
+  img.classList.add('loaded');
+  const ph = img.closest('.thumb').querySelector('.ph');
+  if(ph) ph.classList.add('done');
+
+  /* mShots serves a tiny grey holding image while it generates the real one.
+     If we get a suspiciously small render, retry that URL once after a beat. */
+  if(img.naturalWidth > 0 && img.naturalWidth < 400 && !img.dataset.retried){
+    img.dataset.retried = '1';
+    const url = img.src;
+    setTimeout(() => { img.src = url + (url.includes('?') ? '&' : '?') + 'r=' + Date.now(); }, 4000);
+  }
+}
+
+/* Two independent filter axes that combine with AND. */
+const state = { cms:'all', cat:'all' };
+const CMS_LABEL = { wordpress:'WordPress', shopify:'Shopify' };
+
+function matches(p, s){
+  return (s.cms === 'all' || p.cms === s.cms) && (s.cat === 'all' || p.cat === s.cat);
+}
+
+function render(){
+  const list = PROJECTS.filter(p => matches(p, state));
+
+  document.getElementById('resultLine').textContent =
+    list.length === PROJECTS.length
+      ? `Showing all ${PROJECTS.length} sites`
+      : `Showing ${list.length} of ${PROJECTS.length} sites`;
+
+  if(!list.length){
+    grid.innerHTML = '<p class="empty">No sites match that combination.</p>';
+    return;
+  }
+
+  grid.innerHTML = list.map(p => {
+    const src = sources(p);
+    return `
+    <a class="site" href="${p.url}" target="_blank" rel="noopener nofollow">
+      <div class="thumb">
+        <span class="cms ${p.cms}">${CMS_LABEL[p.cms] || p.cms}</span>
+        <div class="ph"><span>${initials(p.name)}</span></div>
+        <img src="${src[0]}" alt="Screenshot of the ${p.name} website" loading="lazy" decoding="async"
+             data-src='${JSON.stringify(src)}' data-i="0"
+             onload="shotLoaded(this)" onerror="nextSource(this)">
+      </div>
+      <div class="site-body">
+        <h3>${p.name}</h3>
+        <p class="site-url">${domainOf(p.url)}</p>
+        ${p.desc ? `<p class="site-desc">${p.desc}</p>` : ''}
+        <div class="site-meta">
+          <span class="tags"><span class="tag">${p.tag}</span></span>
+          <span class="visit">Visit &nearr;</span>
+        </div>
+      </div>
+    </a>`;
+  }).join('');
+}
+
+/* Each button's count reflects the OTHER axis's current selection, so the numbers
+   always match what you'd actually get. Zero-result buttons disable themselves. */
+function updateCounts(){
+  document.querySelectorAll('.filters').forEach(group => {
+    const axis = group.dataset.group;
+    group.querySelectorAll('.filter').forEach(btn => {
+      const probe = Object.assign({}, state, { [axis]: btn.dataset.v });
+      const n = PROJECTS.filter(p => matches(p, probe)).length;
+      btn.querySelector('.fc').textContent = n;
+      btn.disabled = n === 0 && btn.getAttribute('aria-pressed') !== 'true';
+    });
+  });
+}
+
+document.querySelectorAll('.filters').forEach(group => {
+  group.addEventListener('click', e => {
+    const btn = e.target.closest('.filter');
+    if(!btn || btn.disabled) return;
+    state[group.dataset.group] = btn.dataset.v;
+    group.querySelectorAll('.filter').forEach(b => b.setAttribute('aria-pressed', b === btn));
+    render();
+    updateCounts();
+  });
+});
+
+document.getElementById('burger').addEventListener('click', function(){
+  const menu = document.getElementById('menu');
+  const open = menu.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+document.getElementById('menu').addEventListener('click', e => {
+  if(e.target.tagName === 'A') document.getElementById('menu').classList.remove('open');
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+render();
+updateCounts();
+</script>
+</body>
+</html>
