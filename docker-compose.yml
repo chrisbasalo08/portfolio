@@ -1,7 +1,0 @@
-services:
-  portfolio:
-    build: .
-    container_name: chris-portfolio
-    restart: unless-stopped
-    ports:
-      - "8080:80"
